@@ -9,6 +9,8 @@
 [![Analysis](https://img.shields.io/badge/flutter%20analyze-0%20issues-success)]()
 [![Tests](https://img.shields.io/badge/tests-passing-success)]()
 
+### 📲 [Download Ready-to-Install Android APK (v1.0.0)](https://github.com/imharish7/Expense-Tracker-App/raw/main/apk/luxespend-release.apk)
+
 ---
 
 ## 🌟 Why This App Wins High-Value Freelance Clients
