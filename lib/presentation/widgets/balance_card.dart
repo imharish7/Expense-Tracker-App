@@ -33,6 +33,7 @@ class BalanceCard extends StatelessWidget {
 
     return Container(
       width: double.infinity,
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(26),
         gradient: LinearGradient(
@@ -62,23 +63,30 @@ class BalanceCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Stack(
-        children: [
-          // Ambient luxury glow in top right
-          Positioned(
-            top: -40,
-            right: -40,
-            child: Container(
-              width: 140,
-              height: 140,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.primaryGold.withAlpha(25),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(26),
+        child: Stack(
+          children: [
+            // Ambient luxury glow in top right - cleanly clipped inside card boundaries
+            Positioned(
+              top: -20,
+              right: -20,
+              child: Container(
+                width: 140,
+                height: 140,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      AppColors.primaryGold.withAlpha(35),
+                      AppColors.primaryGold.withAlpha(0),
+                    ],
+                  ),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(24),
+            Padding(
+              padding: const EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -303,7 +311,8 @@ class BalanceCard extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ),
+  );
   }
 }
 
